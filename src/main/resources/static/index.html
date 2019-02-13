@@ -1,18 +1,26 @@
 
 
- <button     onclick="versturen()"   > klik hier voor boten</button>
+ <button id="verhuurbutton"  > klik hier voor boten</button>
  <input type="text" id="vakjesnaam" value="jojo">
+ <div id="naamschip">antwoorddiv</div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+
  <script>
-    function versturen(){
-        $('#vakjesnaam').hide();
-        var vakjesnaam = "bootnaamvak";
-        var bootnaam = document.getElementById("vakjesnaam").value;
-        alert(bootnaam);
+    $(document).on('click', '#verhuurbutton', function(){
+            $.ajax({
+                type: "get",
+                url: "/hallo",
+                success: function(result){
+                    returnfunctie(result);
+                }
+            });
+    });
 
+    function returnfunctie(antwoordserver){
+       $('#naamschip').html(antwoordserver.naam);
+       alert(antwoordserver);
     }
-
 </script>
 
 
