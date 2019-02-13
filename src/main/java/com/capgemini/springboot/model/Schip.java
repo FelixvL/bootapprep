@@ -21,4 +21,8 @@ public class Schip {
     public LocalDateTime bouwdatum;
     public String naam;
     public int topSnelheid;
+
+    public void setType(String tiepe){
+        type = tiepe;
+    }
 }

@@ -1,20 +1,32 @@
 
 
  <button id="verhuurbutton"  >Voeg 1 boot toe</button>
- <input type="text" id="vakjesnaam" value="vul naam boot in">
+ <input type="text" id="vakjesnaam" value="vul naam boot in"> // via url path var
  <div id="naamschip">antwoorddiv</div>
 
  <button id="toonalleschepen" >Toon Alle Schepen</button>
  <div id="alleschepentabel" > alle schepen tabel </div>
 
+ <input type="text" id="bootviapost">
+ <input type="button" onclick="viapostversturen()" value="via post versturen"> // via post
+
+
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
  <script>
+    function viapostversturen(){
+        alert("post inversturen");
+    }
+
+
     $(document).on('click', '#verhuurbutton', function(){
+  //          var extraurl = document.getElementById("vakjesnaam").value;
+             var extraurl = $('#vakjesnaam').val();
+            alert(extraurl);
             $.ajax({
                 type: "get",
-                url: "/nieuwschip",
+                url: "/nieuwschip/"+extraurl,
                 success: function(result){
                     returnfunctie(result);
                 }

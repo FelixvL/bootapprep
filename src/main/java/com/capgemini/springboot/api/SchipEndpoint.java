@@ -3,9 +3,7 @@ package com.capgemini.springboot.api;
 import com.capgemini.springboot.controller.SchipRepository;
 import com.capgemini.springboot.model.Schip;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class SchipEndpoint {
@@ -24,5 +22,11 @@ public class SchipEndpoint {
     @GetMapping("geefalleschepen")
     public Iterable<Schip> geefAlleSchepen(){
         return mijnSchipRepository.findAll();
+    }
+
+    @PostMapping("nieuweboot")
+    public String bootMaken(@RequestBody Schip boot){
+        mijnSchipRepository.save(boot);
+        return "het is gelukt";
     }
 }
