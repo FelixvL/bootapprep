@@ -1,10 +1,20 @@
 
 
-
  <button     onclick="versturen()"   > klik hier voor boten</button>
-<script>
+ <input type="text" id="vakjesnaam" value="jojo">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+ <script>
     function versturen(){
-        alert("we versturen");
+        $('#vakjesnaam').hide();
+        var vakjesnaam = "bootnaamvak";
+        var bootnaam = document.getElementById("vakjesnaam").value;
+        alert(bootnaam);
+
     }
 
 </script>
+
+
+
+
