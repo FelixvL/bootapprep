@@ -37,11 +37,12 @@
     }
     function ophaalfunctie(antwoordserverschepen){
       $('#alleschepentabel').html(antwoordserverschepen);
-      alert("works");
+      var opbouwString = "<table border=1>";
       for( i = 0 ; i < antwoordserverschepen.length ; i++ ){
-       document.getElementById('alleschepentabel').innerHTML += antwoordserverschepen[i].naam;
-       console.log("ab");
+       opbouwString += "<tr><td>"+antwoordserverschepen[i].naam+"</td></tr>";
       }
+      opbouwString += "</table>";
+      document.getElementById('alleschepentabel').innerHTML = opbouwString;
     }
 </script>
 
