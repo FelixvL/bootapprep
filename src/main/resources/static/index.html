@@ -1,7 +1,7 @@
 
 
- <button id="verhuurbutton"  > klik hier voor boten</button>
- <input type="text" id="vakjesnaam" value="jojo">
+ <button id="verhuurbutton"  >Voeg 1 boot toe</button>
+ <input type="text" id="vakjesnaam" value="vul naam boot in">
  <div id="naamschip">antwoorddiv</div>
 
  <button id="toonalleschepen" >Toon Alle Schepen</button>
@@ -33,7 +33,6 @@
 
     function returnfunctie(antwoordserver){
        $('#naamschip').html(antwoordserver.naam);
-       alert(antwoordserver);
     }
     function ophaalfunctie(antwoordserverschepen){
       $('#alleschepentabel').html(antwoordserverschepen);
