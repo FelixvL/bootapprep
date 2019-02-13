@@ -19,4 +19,9 @@ public class SchipEndpoint {
         Schip vliegendeHollander = mijnSchipRepository.save(hetSchip);
         return vliegendeHollander;
     }
+
+    @GetMapping("geefalleschepen")
+    public Iterable<Schip> geefAlleSchepen(){
+        return mijnSchipRepository.findAll();
+    }
 }
