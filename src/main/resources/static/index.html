@@ -16,7 +16,19 @@
 
  <script>
     function viapostversturen(){
-        alert("post inversturen");
+        var dto = {};
+        dto.naam = $('#bootviapost').val();
+        dto = JSON.stringify(dto);
+        $.ajax({
+                type: "post",
+                url: "/nieuweboot",
+                data: dto,
+                contentType : "application/json",
+                success: function(result){
+                    console.log('gelukt');
+                }
+        });
+
     }
 
 
